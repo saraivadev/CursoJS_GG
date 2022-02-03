@@ -42,14 +42,24 @@ function calcular() {
 
     } else {
 
-     let nmax = Math.max(vnum)
-       respostaCalc.innerHTML = `Ao todo, temos ${vnum.length} números cadastrados <br>`
-       respostaCalc.innerHTML += `O maior valor informado foi ${nmax.value} <br>`
-       respostaCalc.innerHTML += `O menor valor informado foi ${Math.min(vnum)} <br>`
-       respostaCalc.innerHTML += `Somando todos valores, temos <br>`
-       respostaCalc.innerHTML += `A média dos valores digitados é: ${vnum.length} números cadastrados <br>`
+        var soma = 0;
+        var media = 0;
+     
+ 
+        for(var c = 0; c < vnum.length; c++){
+            soma += vnum[c]
+           
+        }
+ 
+        media = soma/vnum.length
 
-x
+       respostaCalc.innerHTML = `Ao todo, temos ${vnum.length} números cadastrados <br>`
+       respostaCalc.innerHTML += `O maior valor informado foi ${Math.max(...vnum)} <br>`
+       respostaCalc.innerHTML += `O menor valor informado foi ${Math.min(...vnum)} <br>`
+       respostaCalc.innerHTML += `Somando todos valores, temos ${soma}<br>`
+       respostaCalc.innerHTML += `A média dos valores digitados é: ${media.toFixed(2)} números cadastrados <br>`
+
+     
     }
 
 
